@@ -1,10 +1,11 @@
 import React from 'react';
 import Quizes from '../mocks/quizes';
 import { useParams } from 'react-router-dom';
+import { Quiz } from '../types/quiz';
 
 function QuizScreen() {
     const {quizId} = useParams();
-    const quiz = Quizes.find(item => item.id === quizId);
+    const quiz: Quiz | undefined = Quizes.find(item => item.id === quizId);
 
     return (
         <>

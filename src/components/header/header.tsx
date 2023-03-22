@@ -3,12 +3,12 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from '../logo/logo';
 import { Link } from 'react-router-dom';
-import { Categories } from '../../consts';
+import { NavItem } from '../../types/navigation';
+import categories from '../../mocks/categories';
 
-const nav = [
-    { title: Categories.GRAMMAR, href: '/category/grammar' },
-    { title: Categories.VOCABULARY, href: '/category/vocabulary' },
-]
+const nav: NavItem[] = categories.map(item => ({
+    title: item, href: `/category/${item.toLowerCase()}`
+}));
 
 function Header(): JSX.Element {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -31,7 +31,7 @@ function Header(): JSX.Element {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
                     { nav.map(({title, href}) => (
-                        <Link key={`nav-${title}`} to={href} className="text-sm font-semibold leading-6 text-white">
+                        <Link key={`nav-${title}`} to={href} className="text-sm font-semibold leading-6 text-white hover:opacity-80">
                             {title}
                         </Link>
                     )) }

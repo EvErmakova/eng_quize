@@ -1,8 +1,10 @@
-import { Categories, Levels } from '../consts';
+import { Quiz } from '../types/quiz';
 
-export default [
-    {id: '1', title: 'Present Perfect', description: 'description', category: Categories.GRAMMAR, level: Levels.B1, questions: []},
-    {id: '2', title: 'Present Simple and Present Continues', description: 'description', category: Categories.GRAMMAR, level: Levels.A2, questions: []},
-    {id: '3', title: 'Clothes', description: 'description', category: Categories.VOCABULARY, level: Levels.A2, questions: []},
-    {id: '4', title: 'Adjectives', description: 'description', category: Categories.VOCABULARY, level: Levels.B1, questions: []},
+const quizes: Quiz[] = [
+    {id: '1', title: 'Present Perfect', description: 'description', category: 'Grammar', level: 'B1', questions: []},
+    {id: '2', title: 'Present Simple and Present Continues', description: 'description', category: 'Grammar', level: 'A2', questions: []},
+    {id: '3', title: 'Clothes', description: 'description', category: 'Vocabulary', level: 'A2', questions: []},
+    {id: '4', title: 'Adjectives', description: 'description', category: 'Vocabulary', level: 'B1', questions: []},
 ];
+
+export default quizes;
